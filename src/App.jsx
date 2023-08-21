@@ -1,6 +1,6 @@
 import HomePage from "./page/homepage.component/HomePage"
-import HatsPage from "./page/Hatspage/hatsPage";
-import Other from "./page/Hatspage/other";
+import ShopPage from "./page/Shop/shop";
+import "../src/App.css"
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -15,10 +15,8 @@ import {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/hats" element={<HatsPage />}>
-         <Route path="hataa" element={<Other/>}></Route>
-      </Route>
+      <Route path="/" element={<HomePage/>} />
+      <Route path="/shop" element={<ShopPage/>} />
     </Route>
   )
 )
@@ -31,5 +29,5 @@ function App() {
     </div>
   )
 }
-
+ 
 export default App
