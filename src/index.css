@@ -1,0 +1,26 @@
+header nav{
+    display: flex;
+    gap: 16px;
+    justify-content: end;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+header nav h1{
+    margin-left: auto;
+    margin-top: 80px;
+    border-bottom: 3px solid black;
+}
+header nav a{
+    text-decoration: none;
+    padding: 6px;
+    border-radius: 4px;
+}
+header nav a.active{
+    background: rgb(182, 221, 236);
+    height: 20px;
+}
+
+main{
+    max-width: 1200px;
+    margin: 10px auto;
+}
