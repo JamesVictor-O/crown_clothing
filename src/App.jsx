@@ -1,5 +1,7 @@
 import HomePage from "./page/homepage.component/HomePage"
+import Root from "./page/Root/root";
 import ShopPage from "./page/Shop/shop";
+import Header from "./component/Header/header";
 import "../src/App.css"
 import {
   createBrowserRouter,
@@ -14,8 +16,8 @@ import {
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route>
-      <Route path="/" element={<HomePage/>} />
+    <Route path="/" element={ <Root/>}>
+      <Route index element={<HomePage/>} />
       <Route path="/shop" element={<ShopPage/>} />
     </Route>
   )
@@ -24,7 +26,6 @@ const router = createBrowserRouter(
 function App() {
   return (
     <div>
-      <h2>home</h2>
      <RouterProvider router={router}/>
     </div>
   )
