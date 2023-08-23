@@ -11,8 +11,11 @@ const Header = () => (
             <NavLink className="option" to="/shop">
                 SHOP
             </NavLink>
-            <NavLink className="option" to="/contact ">
+            <NavLink className="option" to="/contact">
                 CONTACT
+            </NavLink>
+            <NavLink className="option" to="/signInandOut">
+                Sign In
             </NavLink>
         </div>
      </div>
