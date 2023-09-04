@@ -7,7 +7,7 @@ export default function FormInput({handleChange,label, ...otherProps}){
                 label ?
                     
                 (<label className={`${
-                        otherProps.value.length ? 'shrink' : ''
+                        otherProps.value ? 'shrink' : ''
                         } form-label` }
                     >
                    {label}
