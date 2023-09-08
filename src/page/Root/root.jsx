@@ -3,12 +3,12 @@ import Header from "../../component/Header/header"
 import { Outlet } from "react-router-dom"
 
 
-export default function Root({currentUser}) {
+export default function Root() {
     
 
     return (
         <div>
-            <Header currentUser={ currentUser} />
+            <Header/>
             <div>
                 <Outlet/>
             </div>
