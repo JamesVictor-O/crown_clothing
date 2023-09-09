@@ -18,26 +18,27 @@ import {
   Routes,
   Route,
   Link,
-  NavLink
+  NavLink,
+  Navigate
 } from "react-router-dom";
 // import HomePage from "./page/homepage.component/homePage";
 
  
 
 
-function App() {
+function App(props) {
     useEffect(() => {
       const unsubscribe = auth.onAuthStateChanged(async userAuth => {
         if (userAuth) {
           const userRef = await createUserProfileDocument(userAuth)
           onSnapshot(userRef, (snapshot) => {
-            setCurrentUser( {
+            props.setCurrentUser( {
                 id: snapshot.id,
                 ...snapshot.data()
               })
           })
         } else {
-          setCurrentUser(userAuth)
+          props.setCurrentUser(userAuth)
          }
         })
 
@@ -52,7 +53,7 @@ function App() {
       <Route path="/" element={<Root/>}>
           <Route index element={<HomePage/>} />
           <Route path="/shop" element={<ShopPage />} />
-          <Route path="/signInandOut" element={<SignInandOut/>}/>
+        <Route path="/signInandOut" element={props.currentUser ? <Navigate to="/" replace/> : <SignInandOut/> } />
         </Route>
     )
   )
@@ -62,7 +63,12 @@ function App() {
     </div>
   )
 } 
+const mapStateToProps = state => ({
+  currentUser: state.user.currentUser
+})
 const mapDispatchToProps = dispatch => ({
     setCurrentUser:user => dispatch(setCurrentUser(user))
- })
-export default connect(null, mapDispatchToProps)(App)
+})
+ 
+ 
+ export default connect(mapStateToProps, mapDispatchToProps)(App)
