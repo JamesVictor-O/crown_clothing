@@ -1,12 +1,14 @@
 import "./collectionItem.scss"
 import CustomButton from "../custom-button/custom-button";
-import { connect } from "react-redux";
+import { useSelector, useDispatch } from "react-redux/es/hooks/useSelector";
+import { toggleCartHidden, addItemsToCart } from "../../redux/cart/cart.action";
 
-import { addItem } from "../../redux/cart/cart.action";
-
-function CollectionItem({ item, addItem,cartItem }) {
+function CollectionItem({ item, addItem,cartItem}) {
     const { price, name, imageUrl } = item;
-     console.log(cartItem)
+    const dispatch = useDispatch()
+    const handleAddingItemsToCart = () => {
+        dispatch(addItemsToCart(item))
+    }
     return (
         <div className="collection-item">
             <div
@@ -19,15 +21,9 @@ function CollectionItem({ item, addItem,cartItem }) {
                 <span className="name">{ name }</span>
                 <span className="price">{ price}$</span>
             </div>
-            <CustomButton onClick={()=> addItem(item)} inverted>ADD TO CART</CustomButton>
+            <CustomButton onClick={handleAddingItemsToCart} inverted>ADD TO CART</CustomButton>
         </div>
     )
 }
 
-const mapDispatchToProps = dispatch => ({
-    addItem:item => dispatch(addItem(item))
-})
-const mapStateToProps = state => ({
-    cartItem:state.cart.cartItem
-})
-export default connect(mapStateToProps,mapDispatchToProps)(CollectionItem);
+export default CollectionItem;

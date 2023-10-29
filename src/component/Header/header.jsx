@@ -9,7 +9,7 @@ import CartDropdown from "../cart-dropdown/card-dropdown"
 
 import "./header.scss"
 const Header = ({ currentUser, hidden }) => {
-    console.log(hidden)
+    
     return (
      <div className="header">
         <NavLink className="logo-container" to="/">
@@ -36,7 +36,6 @@ const Header = ({ currentUser, hidden }) => {
                 hidden ? null : <CartDropdown/>
             }
      </div>
-        
     )
 }
 
@@ -44,4 +43,4 @@ const mapStateToProps = ({user:{currentUser}, cart:{hidden}}) => ({
     currentUser,
     hidden
  })
-export default connect(mapStateToProps)(Header)
+export default Header
