@@ -1,7 +1,7 @@
 import "./collectionItem.scss"
 import CustomButton from "../custom-button/custom-button";
-import { useSelector, useDispatch } from "react-redux/es/hooks/useSelector";
-import { toggleCartHidden, addItemsToCart } from "../../redux/cart/cart.action";
+import { useSelector, useDispatch } from "react-redux";
+import { addItemsToCart } from "../../redux/slices/cartSlice";
 
 function CollectionItem({ item, addItem,cartItem}) {
     const { price, name, imageUrl } = item;

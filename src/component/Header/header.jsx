@@ -1,5 +1,4 @@
 import { NavLink, Link } from "react-router-dom"
-import { connect } from "react-redux"
 import { ReactComponent as Logo } from "../../assets/crown.svg"
 import { auth } from "../../firebase/firebase.utils"
 
@@ -7,9 +6,12 @@ import { auth } from "../../firebase/firebase.utils"
 import CartIcon from "../card-icon/card-icon"
 import CartDropdown from "../cart-dropdown/card-dropdown"
 
+import { useSelector } from "react-redux"
+
 import "./header.scss"
-const Header = ({ currentUser, hidden }) => {
-    
+const Header = () => {
+    const { currentUser } = useSelector((state) => state.user)
+    const {hidden}=useSelector((state)=> state.cart)
     return (
      <div className="header">
         <NavLink className="logo-container" to="/">
@@ -39,8 +41,4 @@ const Header = ({ currentUser, hidden }) => {
     )
 }
 
-const mapStateToProps = ({user:{currentUser}, cart:{hidden}}) => ({
-    currentUser,
-    hidden
- })
 export default Header
