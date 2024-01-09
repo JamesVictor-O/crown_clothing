@@ -2,11 +2,15 @@ import { useState, useEffect } from "react"
 import { onSnapshot } from "firebase/firestore";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
+
+//pages to be routed
 import HomePage from "./page/homepage.component/HomePage"
 import SignInandOut from "./page/Sign-in-out/signIn_out";
 import Root from "./page/Root/root";
 import ShopPage from "./page/Shop/shop";
-
+import CheckOutPage from "./page/checkout-page/checkout-page";
+  
+  
 import { setCurrentUser } from "./redux/slices/userSlice"
 
 // import LoginPage  from "./reduxTesting/LoginPage";
@@ -69,6 +73,7 @@ function App() {
           <Route path="mainpage" element={<MainPage/>}/> */}
         <Route index element={<HomePage/>} />
         <Route path="/shop" element={<ShopPage />} />
+        <Route path="/checkoutPage" element={<CheckOutPage/>}/>
         <Route path="/signInandOut" element={currentUser ? <Navigate to="/" replace/> : <SignInandOut/> } />
         </Route>
     )

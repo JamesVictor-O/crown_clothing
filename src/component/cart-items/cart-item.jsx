@@ -1,4 +1,4 @@
-import "./card-item.scss"
+ import "./card-item.scss"
 
 const CartItem = ({item: {imageUrl, price, name, quantity }}) => {
     return (
@@ -6,7 +6,7 @@ const CartItem = ({item: {imageUrl, price, name, quantity }}) => {
             <img src={imageUrl} alt="item-image" />
             <div className="item-details">
                 <span className="name">{name}</span>
-                <span className="price">${price * quantity }</span>
+                <span className="price">${price} x {quantity }</span>
             </div>
         </div>
     )
