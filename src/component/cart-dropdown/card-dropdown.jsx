@@ -14,17 +14,14 @@ const CartDropdown = () => {
                 
         <div className="cart-dropdown">
             <div className="cart-items">
-                {cartItems.length ? (
-                    {
-                        cartItems.map(cartItem => (
-                            <CartItem key={cartItem.id} item={cartItem} />
-                        ))
-                    }: 
-                    (<span> your art is empty </span>)
-                )}
+                {
+                    cartItems.map(cartItem => (
+                        <CartItem key={cartItem.id} item={cartItem} />
+                    ))
+                }
             </div>
             <CustomButton onClick={() => {
-                navigate("/checkoutPage")
+                navigate()
             }}>
                 GO TO CHECKOUT
             </CustomButton>
