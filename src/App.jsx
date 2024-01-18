@@ -72,7 +72,7 @@ function App() {
           {/* <Route index element={<LoginPage />} />
           <Route path="mainpage" element={<MainPage/>}/> */}
         <Route index element={<HomePage/>} />
-        <Route path="/shop" element={<ShopPage />} />
+        <Route path="/shop" element={<ShopPage/>} />
         <Route path="/checkoutPage" element={<CheckOutPage/>}/>
         <Route path="/signInandOut" element={currentUser ? <Navigate to="/" replace/> : <SignInandOut/> } />
         </Route>
