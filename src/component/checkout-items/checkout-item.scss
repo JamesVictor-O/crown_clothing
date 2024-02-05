@@ -25,6 +25,15 @@
     .item-quantity{
         width: 23%;
         margin-left: 20px;
+        display: flex;
+        align-items: center;
+      
+        .arrow{
+            cursor: pointer;
+        }
+        .value{
+            margin: 0 10px;
+        }
     }
     .remove-button{
         cursor: pointer;

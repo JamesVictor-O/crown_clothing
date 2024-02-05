@@ -4,7 +4,7 @@ import CheckoutItem from "../../component/checkout-items/checkout-item";
 
 const CheckOutPage = () => {
     const { cartItems, hidden } = useSelector((state) => state.cart) 
-    const totalPrice = cartItems.reduce((acc, item) => acc + item.price, 0)
+    const totalPrice = cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0)
     
     return (
         <div className="checkoutPage">
@@ -30,7 +30,7 @@ const CheckOutPage = () => {
                     <CheckoutItem cartItem={cartItem} key={cartItem.id}/>
                   ) )}
 
-            {cartItems.length !== 0 ? (
+        {cartItems.length !== 0 ? (
                 <div className="itemsTotalPrice">
                 TOTAL : {totalPrice }$
                </div>
