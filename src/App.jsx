@@ -13,9 +13,6 @@ import CheckOutPage from "./page/checkout-page/checkout-page";
   
 import { setCurrentUser } from "./redux/slices/userSlice"
 
-// import LoginPage  from "./reduxTesting/LoginPage";
-// import MainPage  from "./reduxTesting/mainPage";
-
 import { useSelector, useDispatch } from "react-redux";
 
 
@@ -30,10 +27,6 @@ import {
   NavLink,
   Navigate
 } from "react-router-dom";
-
-// import HomePage from "./page/homepage.component/homePage";
-
- 
 
 
 function App() {
@@ -68,14 +61,11 @@ function App() {
     createRoutesFromElements(
       
       <Route path="/" element={<Root/>}>
-        
-          {/* <Route index element={<LoginPage />} />
-          <Route path="mainpage" element={<MainPage/>}/> */}
         <Route index element={<HomePage/>} />
         <Route path="/shop" element={<ShopPage/>} />
         <Route path="/checkoutPage" element={<CheckOutPage/>}/>
         <Route path="/signInandOut" element={currentUser ? <Navigate to="/" replace/> : <SignInandOut/> } />
-        </Route>
+      </Route>
     )
   )
   return (
@@ -84,12 +74,7 @@ function App() {
     </div>
   )
 } 
-// const mapStateToProps = state => ({
-//   currentUser: state.user.currentUser
-// })
-// const mapDispatchToProps = dispatch => ({
-//     setCurrentUser:user => dispatch(setCurrentUser(user))
-// })
+
 
  
  export default App
