@@ -1,27 +1,22 @@
-import React from "react"
-import { ReactDOM } from "react"
-import SHOP_DATA from "./shop.data"
-import CollectionPreview from "../../component/preview-collection/collectionPreview"
+import React from "react";
+import { ReactDOM } from "react";
+import SHOP_DATA from "./shop.data";
+import { Outlet } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
+import CollectionOverview from "../../component/collection-overview/collection-overview";
+import CollectionPage from "../collection-page/collection-page";
 
-class ShopPage extends React.Component{ 
-    constructor(props){
-        super(props)
-        this.state = {
-             collection:SHOP_DATA         
-         }
-    }
-    render() {
-        let {collection} = this.state
-        return (
-            <div>
-                {
-                    collection.map(({id,...otherProps}) => (
-                        <CollectionPreview key={id} {...otherProps} />
-                    ))
-                }
-            </div>
-        )
-    }
-}
+const ShopPage = () => {
+  const { shopId } = useParams();
+  if (shopId) {
+    return (
+      <div className="shopPage">
+        <CollectionPage />
+      </div>
+    );
+  } else {
+    return <CollectionOverview />;
+  }
+};
 
-export default ShopPage
+export default ShopPage;

@@ -10,7 +10,7 @@ function Menuitem({ title, ImageUI, size, link }) {
     return (
         <div className={`${size} menu-item`} onClick={() => {
         
-            navigate(`/shop`)
+            navigate(`/shop/${title}`)
         }} >
             <div
                 className="background-image"

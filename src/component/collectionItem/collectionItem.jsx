@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { addItemsToCart } from "../../redux/slices/cartSlice";
 
 function CollectionItem({ item, addItem, cartItem }) {
-    console.log(item)
     const { price, name, imageUrl } = item;
     const dispatch = useDispatch()
     const handleAddingItemsToCart = () => {
