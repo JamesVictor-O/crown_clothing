@@ -34,4 +34,19 @@
         align-items: center;
         color: red;
     }
+    .payment-button{
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+        margin-left: auto;
+
+       .buttonP{
+        background-color: green;
+        padding: 5px;
+        color: white;
+        border-color: white;
+        border-radius: 5px;
+
+       }
+    }
 }

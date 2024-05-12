@@ -28,6 +28,7 @@ import {
 
 function App() {
   const { currentUser } = useSelector((state) => state.user);
+  console.log(currentUser)
 
   const dispatch = useDispatch();
   const handleCurrentUserSetting = (user) => {
